@@ -45,7 +45,7 @@ export default function EnrolledCourses() {
                     <Link to="/student/browse" className="btn-primary"><FiSearch size={15} /> Browse courses</Link>
                 </div>
             ) : (
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
+                <div className="course-grid">
                     {visible.map(c => (
                         <article key={c.id} className="course-card">
                             <Link to={`/student/learn/${c.id}`} className="course-thumb" aria-label={`Open ${c.title}`}>

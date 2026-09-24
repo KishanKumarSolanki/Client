@@ -45,7 +45,7 @@ export default function ManageCourses() {
                 </div>
             </div>
 
-            <div style={{ background: 'var(--card)', borderRadius: '1rem', border: '1px solid var(--border)', overflow: 'hidden' }}>
+            <div className="table-wrap" style={{ background: 'var(--card)', borderRadius: '1rem', border: '1px solid var(--border)', overflow: 'hidden' }}>
                 <table className="data-table">
                     <thead>
                         <tr>

@@ -3,15 +3,8 @@ import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import CourseCard from '../../components/CourseCard';
-import { courses, testimonials, adminStats } from '../../data/mockData';
-import { FiArrowRight, FiPlay, FiStar, FiUsers, FiBook, FiAward, FiCheckCircle, FiTrendingUp, FiMonitor, FiBriefcase } from 'react-icons/fi';
-
-const stats = [
-    { label: 'Students Enrolled', value: '50K+', icon: FiUsers, color: 'var(--primary-dark)' },
-    { label: 'Expert Instructors', value: '200+', icon: FiAward, color: '#7c3aed' },
-    { label: 'Online Courses', value: '500+', icon: FiBook, color: '#0891b2' },
-    { label: 'Satisfaction Rate', value: '98%', icon: FiStar, color: '#047857' },
-];
+import { courses, testimonials } from '../../data/mockData';
+import { FiArrowRight, FiPlay, FiStar, FiBook, FiAward, FiCheckCircle, FiTrendingUp, FiMonitor, FiBriefcase } from 'react-icons/fi';
 
 const features = [
     { icon: FiMonitor, title: 'Learn at Your Pace', desc: 'Access course content anytime, anywhere. Learn on your schedule.' },
@@ -190,7 +183,7 @@ export default function Home() {
                         </div>
                         <Link to="/courses" className="btn-outline">View All Courses <FiArrowRight /></Link>
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.5rem' }}>
+                    <div className="course-grid">
                         {featured.map(c => <CourseCard key={c.id} course={c} />)}
                     </div>
                 </div>

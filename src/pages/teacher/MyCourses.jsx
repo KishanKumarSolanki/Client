@@ -30,7 +30,7 @@ export default function MyCourses() {
                     <Link to="/teacher/create-course" className="btn-primary">Create Course</Link>
                 </div>
             ) : (
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '1.5rem' }}>
+                <div className="course-grid">
                     {myCourses.map(c => (
                         <div key={c.id} style={{ background: 'var(--card)', borderRadius: '1rem', border: '1px solid var(--border)', overflow: 'hidden', transition: 'all 0.3s' }}
                             onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(139,92,246,0.4)'; e.currentTarget.style.transform = 'translateY(-4px)'; }}

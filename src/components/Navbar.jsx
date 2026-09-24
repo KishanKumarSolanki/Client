@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { FiMenu, FiX, FiBook, FiLogOut, FiGrid } from 'react-icons/fi';
 
@@ -25,7 +25,6 @@ export function Brand({ size }) {
 export default function Navbar() {
     const { user, logout } = useAuth();
     const navigate = useNavigate();
-    const location = useLocation();
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
@@ -35,9 +34,6 @@ export default function Navbar() {
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
-
-    // Close the mobile menu after navigating
-    useEffect(() => { setMenuOpen(false); }, [location.pathname]);
 
     const handleLogout = () => { logout(); navigate('/'); };
     const dashboardLink = user ? `/${user.role}/dashboard` : '/login';
@@ -53,6 +49,7 @@ export default function Navbar() {
                             key={link.to}
                             to={link.to}
                             end
+                            onClick={() => setMenuOpen(false)}
                             className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
                         >
                             {link.label}
@@ -100,6 +97,7 @@ export default function Navbar() {
                         key={link.to}
                         to={link.to}
                         end
+                        onClick={() => setMenuOpen(false)}
                         className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
                     >
                         {link.label}

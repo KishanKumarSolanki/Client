@@ -58,7 +58,7 @@ export default function CreateCourse() {
                                 <label style={{ display: 'block', color: 'var(--text-2)', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.5rem' }}>Course Title *</label>
                                 <input className="form-input" type="text" placeholder="e.g. Complete React Development 2024" value={form.title} onChange={e => update('title', e.target.value)} required />
                             </div>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                            <div className="form-grid">
                                 <div>
                                     <label style={{ display: 'block', color: 'var(--text-2)', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.5rem' }}>Category *</label>
                                     <select className="form-input" value={form.category} onChange={e => update('category', e.target.value)} required>
@@ -73,7 +73,7 @@ export default function CreateCourse() {
                                     </select>
                                 </div>
                             </div>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                            <div className="form-grid">
                                 <div>
                                     <label style={{ display: 'block', color: 'var(--text-2)', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.5rem' }}>Duration</label>
                                     <input className="form-input" type="text" placeholder="e.g. 40 hours" value={form.duration} onChange={e => update('duration', e.target.value)} />
@@ -118,7 +118,7 @@ export default function CreateCourse() {
                     </div>
 
                     {/* Actions */}
-                    <div style={{ display: 'flex', gap: '1rem' }}>
+                    <div className="form-actions">
                         <button type="submit" disabled={loading} className="btn-primary" style={{ flex: 1, justifyContent: 'center', padding: '0.875rem' }}>
                             {loading ? 'Saving...' : <><FiSave size={16} /> {existing ? 'Update Course' : 'Create & Submit for Review'}</>}
                         </button>

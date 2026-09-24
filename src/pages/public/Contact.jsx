@@ -94,7 +94,7 @@ export default function Contact() {
                                 <h2 style={{ color: 'var(--text)', fontWeight: 700, fontSize: '1.4rem', fontFamily: 'var(--font-display)', marginBottom: '0.5rem' }}>Send a Message</h2>
                                 <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '2rem' }}>We typically respond within 2-4 business hours.</p>
                                 <form onSubmit={handleSubmit}>
-                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                                    <div className="form-grid" style={{ marginBottom: '1rem' }}>
                                         <div>
                                             <label style={{ display: 'block', color: 'var(--text-2)', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.5rem' }}>Full Name</label>
                                             <input className="form-input" type="text" placeholder="Your name" value={form.name} onChange={e => setForm(p => ({ ...p, name: e.target.value }))} required />

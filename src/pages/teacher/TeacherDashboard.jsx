@@ -1,4 +1,4 @@
-import { courses, students, enrollments } from '../../data/mockData';
+import { courses, enrollments } from '../../data/mockData';
 import { FiBook, FiUsers, FiTrendingUp, FiStar, FiEye, FiEdit2 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 

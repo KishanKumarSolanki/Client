@@ -83,7 +83,7 @@ export default function ShortCourses() {
                             <p>Try a different search term</p>
                         </div>
                     ) : (
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
+                        <div className="course-grid">
                             {filtered.map(c => <CourseCard key={c.id} course={c} />)}
                         </div>
                     )}

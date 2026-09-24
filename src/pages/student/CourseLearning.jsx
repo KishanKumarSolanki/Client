@@ -50,9 +50,9 @@ export default function CourseLearning() {
                 <p className="page-sub">by {course.teacher}</p>
             </div>
 
-            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+            <div className="learning-layout">
                 {/* Player */}
-                <section style={{ flex: '1 1 520px', minWidth: 0 }}>
+                <section>
                     <div style={{
                         aspectRatio: '16 / 9', borderRadius: '1rem', overflow: 'hidden', position: 'relative',
                         background: 'linear-gradient(135deg, #1e1b4b 0%, #4338ca 60%, #0891b2 130%)',
@@ -87,7 +87,7 @@ export default function CourseLearning() {
                 </section>
 
                 {/* Lesson list */}
-                <aside className="panel" style={{ flex: '0 1 340px', width: '100%', minWidth: 280 }}>
+                <aside className="panel lesson-aside">
                     <div style={{ padding: '1.1rem 1.25rem', borderBottom: '1px solid var(--border)' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.6rem' }}>
                             <h3 style={{ fontSize: '1rem', fontWeight: 700 }}>Course content</h3>

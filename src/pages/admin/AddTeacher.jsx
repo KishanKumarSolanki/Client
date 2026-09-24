@@ -35,7 +35,7 @@ export default function AddTeacher() {
             ) : (
                 <div style={{ background: 'var(--card)', borderRadius: '1.25rem', border: '1px solid var(--border)', padding: '2.5rem' }}>
                     <form onSubmit={handleSubmit}>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.25rem' }}>
+                        <div className="form-grid" style={{ marginBottom: '1.25rem' }}>
                             <div>
                                 <label style={{ display: 'block', color: 'var(--text-2)', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.5rem' }}>
                                     <FiUser size={13} style={{ marginRight: '0.25rem' }} />Full Name *
@@ -52,7 +52,7 @@ export default function AddTeacher() {
                             </div>
                         </div>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.25rem' }}>
+                        <div className="form-grid" style={{ marginBottom: '1.25rem' }}>
                             <div>
                                 <label style={{ display: 'block', color: 'var(--text-2)', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.5rem' }}>
                                     <FiPhone size={13} style={{ marginRight: '0.25rem' }} />Phone Number
@@ -91,7 +91,7 @@ export default function AddTeacher() {
                             <p style={{ color: 'var(--text-muted)', fontSize: '0.75rem', marginTop: '0.375rem' }}>The teacher will be asked to change this on first login.</p>
                         </div>
 
-                        <div style={{ display: 'flex', gap: '1rem' }}>
+                        <div className="form-actions">
                             <button type="submit" disabled={loading} className="btn-primary" style={{ flex: 1, justifyContent: 'center', padding: '0.875rem' }}>
                                 {loading ? 'Adding Teacher...' : <><FiUserPlus size={16} /> Add Teacher</>}
                             </button>

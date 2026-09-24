@@ -51,7 +51,7 @@ export default function StudentDashboard() {
                 ))}
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.5rem', alignItems: 'start' }}>
+            <div className="dashboard-grid" style={{ alignItems: 'start' }}>
                 {/* Continue learning */}
                 <section className="panel" style={{ gridColumn: 'span 1' }}>
                     <div className="panel-header">

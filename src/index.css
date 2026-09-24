@@ -51,6 +51,10 @@
 
 html { scroll-behavior: smooth; }
 
+*, *::before, *::after { box-sizing: border-box; }
+
+img, svg { max-width: 100%; }
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg);
@@ -261,6 +265,8 @@ textarea.form-input { resize: vertical; }
 }
 .data-table tr:last-child td { border-bottom: none; }
 .data-table tbody tr:hover td { background: #f8fafc; }
+.table-wrap { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+.table-wrap .data-table { min-width: 660px; }
 
 /* Badges */
 .badge {
@@ -333,6 +339,24 @@ textarea.form-input { resize: vertical; }
   .mobile-menu-btn { display: inline-flex; }
   .mobile-menu.open { display: block; }
 }
+
+/* Reusable responsive layout helpers */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+  gap: 1.5rem;
+}
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.form-actions { display: flex; align-items: center; gap: 1rem; }
+.learning-layout { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: flex-start; }
+.learning-layout > section { flex: 1 1 520px; min-width: 0; }
+.learning-layout > .lesson-aside { flex: 0 1 340px; width: 100%; min-width: 280px; }
+.course-list-row { display: flex; gap: 1.5rem; align-items: center; }
 
 /* ─────────────────────────────────────────────
    Footer
@@ -489,6 +513,54 @@ textarea.form-input { resize: vertical; }
 @media (max-width: 960px) {
   .detail-grid { grid-template-columns: minmax(0, 1fr); }
   .detail-aside { position: static; order: -1; }
+}
+
+@media (max-width: 680px) {
+  html { font-size: 15px; }
+  body { overflow-x: hidden; }
+  .container-page, .site-nav-inner { padding-left: 1rem; padding-right: 1rem; }
+  .site-nav-inner { height: 62px; }
+  .brand-mark { width: 34px; height: 34px; border-radius: 10px; }
+  .brand-name { font-size: 1.08rem; }
+  .mobile-menu { padding: 0.55rem 1rem 1rem; }
+  .mobile-menu .btn-primary, .mobile-menu .btn-outline { min-height: 42px; }
+
+  .dash-topbar { height: 60px; padding: 0 0.85rem; }
+  .dash-content { padding: 1.15rem 0.85rem 1.5rem; }
+  .dash-sidebar, .dash-sidebar.collapsed { width: min(82vw, 300px); }
+  .dash-brand { height: 60px; padding: 0.9rem 1rem; }
+  .dash-user, .dash-nav, .dash-foot { margin-left: 0.65rem; margin-right: 0.65rem; }
+  .dash-nav { padding-left: 0.2rem; padding-right: 0.2rem; }
+  .dash-foot { padding-left: 0.2rem; padding-right: 0.2rem; }
+
+  .page-title { font-size: 1.45rem; line-height: 1.25; }
+  .page-sub { font-size: 0.875rem; }
+  .section-title { font-size: clamp(1.7rem, 8vw, 2.1rem); }
+  .stat-card { padding: 1.1rem; }
+  .panel-header { padding: 0.95rem 1rem; align-items: flex-start; flex-wrap: wrap; }
+  .empty-state { padding: 2.75rem 1rem; }
+  .form-input { font-size: 16px; }
+  .btn-primary, .btn-outline { min-height: 42px; }
+
+  .dashboard-grid, .form-grid { grid-template-columns: 1fr; }
+  .form-actions { flex-wrap: wrap; }
+  .form-actions > * { flex: 1 1 10rem; }
+  .learning-layout { gap: 1rem; }
+  .learning-layout > section, .learning-layout > .lesson-aside { flex-basis: 100%; min-width: 0; }
+  .course-list-row { flex-direction: column; align-items: stretch; gap: 1rem; }
+  .course-list-row > img { width: 100% !important; height: auto !important; aspect-ratio: 16 / 9; }
+  .course-list-row > div:last-child { text-align: left !important; }
+
+  /* Covers legacy inline grids and form pairs used throughout the app. */
+  div[style*="grid-template-columns"] { grid-template-columns: minmax(0, 1fr) !important; }
+  div[style*="max-width: 700px"], div[style*="max-width: 800px"] { max-width: 100% !important; }
+  input[style*="width:"], select[style*="width:"] { max-width: 100% !important; }
+  div[style*="margin-left: auto"] { margin-left: 0 !important; }
+  div[style*="display: flex"][style*="justify-content: space-between"] { flex-wrap: wrap; }
+  .stats-strip { margin-top: 2.5rem; }
+  .stats-strip > div { padding: 1rem 0.6rem; }
+  .hero { padding: 6.5rem 1rem 3.5rem; }
+  .site-footer { padding-top: 2.75rem; }
 }
 
 /* Home hero */

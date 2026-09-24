@@ -52,7 +52,7 @@ export default function BrowseCourses() {
                     <p>Try a different keyword or clear the category filter.</p>
                 </div>
             ) : (
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '1.5rem' }}>
+                <div className="course-grid">
                     {filtered.map(c => (
                         <CourseCard key={c.id} course={c} enrolled={isEnrolled(c.id)} onEnroll={enroll} />
                     ))}

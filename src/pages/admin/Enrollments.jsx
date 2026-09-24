@@ -18,7 +18,7 @@ export default function Enrollments() {
                 ))}
             </div>
 
-            <div style={{ background: 'var(--card)', borderRadius: '1rem', border: '1px solid var(--border)', overflow: 'hidden' }}>
+            <div className="table-wrap" style={{ background: 'var(--card)', borderRadius: '1rem', border: '1px solid var(--border)', overflow: 'hidden' }}>
                 <table className="data-table">
                     <thead>
                         <tr>
@@ -31,7 +31,7 @@ export default function Enrollments() {
                         </tr>
                     </thead>
                     <tbody>
-                        {enrollments.map((e, i) => (
+                        {enrollments.map(e => (
                             <tr key={e.id}>
                                 <td style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>#{e.id}</td>
                                 <td>

@@ -108,7 +108,7 @@ export default function Courses() {
                         }}>
                             {filtered.map(c => (
                                 view === 'list' ? (
-                                    <div key={c.id} style={{ background: 'var(--card)', borderRadius: '1rem', border: '1px solid var(--border)', padding: '1.25rem', display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+                            <div key={c.id} className="course-list-row" style={{ background: 'var(--card)', borderRadius: '1rem', border: '1px solid var(--border)', padding: '1.25rem' }}>
                                         <img src={c.thumbnail} alt={c.title} style={{ width: '140px', height: '90px', objectFit: 'cover', borderRadius: '0.5rem', flexShrink: 0 }} />
                                         <div style={{ flex: 1 }}>
                                             <span style={{ color: 'var(--primary-dark)', fontSize: '0.75rem', fontWeight: 600, }}>{c.category}</span>

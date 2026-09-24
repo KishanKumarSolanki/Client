@@ -1,5 +1,5 @@
-import { courses, students, teachers, enrollments, adminStats } from '../../data/mockData';
-import { FiUsers, FiBook, FiTrendingUp, FiDollarSign, FiUserPlus, FiBarChart2 } from 'react-icons/fi';
+import { courses, enrollments, adminStats } from '../../data/mockData';
+import { FiUsers, FiBook, FiTrendingUp, FiDollarSign, FiUserPlus } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 export default function AdminDashboard() {
@@ -41,7 +41,7 @@ export default function AdminDashboard() {
                 ))}
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div className="dashboard-grid">
                 {/* Recent Enrollments */}
                 <div style={{ background: 'var(--card)', borderRadius: '1rem', border: '1px solid var(--border)', overflow: 'hidden' }}>
                     <div style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

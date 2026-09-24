@@ -26,7 +26,7 @@ export default function Login() {
     // If already logged in, redirect
     useEffect(() => {
         if (user) navigate(`/${user.role}/dashboard`, { replace: true });
-    }, [user]);
+    }, [navigate, user]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
